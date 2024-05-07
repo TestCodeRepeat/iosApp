@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64A5750ADD2C247ECD47D3FF /* CounterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A57D616737EF55D4F1E1C2 /* CounterScreen.swift */; };
+		64A578BF28F3C862EE0460B6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A57A803AB91C3EEF532FCF /* MainViewModel.swift */; };
 		796016202BE526D500CB59B3 /* iosAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960161F2BE526D500CB59B3 /* iosAppApp.swift */; };
 		796016222BE526D500CB59B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796016212BE526D500CB59B3 /* ContentView.swift */; };
 		796016242BE526D500CB59B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 796016232BE526D500CB59B3 /* Assets.xcassets */; };
@@ -14,6 +16,7 @@
 		796016312BE526D500CB59B3 /* iosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796016302BE526D500CB59B3 /* iosAppTests.swift */; };
 		7960163B2BE526D500CB59B3 /* iosAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960163A2BE526D500CB59B3 /* iosAppUITests.swift */; };
 		7960163D2BE526D500CB59B3 /* iosAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960163C2BE526D500CB59B3 /* iosAppUITestsLaunchTests.swift */; };
+		79F8682C2BE98A5700FAE0B8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F8682B2BE98A5700FAE0B8 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		64A57A803AB91C3EEF532FCF /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		64A57D616737EF55D4F1E1C2 /* CounterScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterScreen.swift; sourceTree = "<group>"; };
 		7960161C2BE526D500CB59B3 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7960161F2BE526D500CB59B3 /* iosAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosAppApp.swift; sourceTree = "<group>"; };
 		796016212BE526D500CB59B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +49,7 @@
 		796016362BE526D500CB59B3 /* iosAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7960163A2BE526D500CB59B3 /* iosAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosAppUITests.swift; sourceTree = "<group>"; };
 		7960163C2BE526D500CB59B3 /* iosAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		79F8682B2BE98A5700FAE0B8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +102,11 @@
 			children = (
 				7960161F2BE526D500CB59B3 /* iosAppApp.swift */,
 				796016212BE526D500CB59B3 /* ContentView.swift */,
+				79F8682B2BE98A5700FAE0B8 /* MainViewModel.swift */,
 				796016232BE526D500CB59B3 /* Assets.xcassets */,
 				796016252BE526D500CB59B3 /* Preview Content */,
+				64A57A803AB91C3EEF532FCF /* MainViewModel.swift */,
+				64A57D616737EF55D4F1E1C2 /* CounterScreen.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -280,6 +289,9 @@
 			files = (
 				796016222BE526D500CB59B3 /* ContentView.swift in Sources */,
 				796016202BE526D500CB59B3 /* iosAppApp.swift in Sources */,
+				79F8682C2BE98A5700FAE0B8 /* MainViewModel.swift in Sources */,
+				64A578BF28F3C862EE0460B6 /* MainViewModel.swift in Sources */,
+				64A5750ADD2C247ECD47D3FF /* CounterScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

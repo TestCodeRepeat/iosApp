@@ -9,33 +9,38 @@ import Foundation
 import Combine
 import shared
 
-    class MainViewModel: ObservableObject {
-        
-        let store = AiCounterStore()
-        
-        @Published var state:AiCounterState
-        private var cancellables: Set<AnyCancellable> = []
-
-        init() {
-            self.state = store.iosState.value
-            activate()
-        }
-
-        func activate()  {
-            Task {
-                for await it in store.iosState {
-                    self.state = it
+class MainViewModel: ObservableObject {
+    
+    let eventBus:EventBus
+    let counterStore:AiCounterStore
+    let todoStore:AiTodoStore
+    
+    @Published var counterState: AiCounterState
+    @Published var todoState: AiTodoState
+    
+    init() {
+        self.eventBus = EventBusImpl()
+        self.counterStore = AiCounterStore(eventBus: self.eventBus)
+        self.todoStore = AiTodoStore(eventBus: self.eventBus)
+        self.counterState = counterStore.iosState.value
+        self.todoState = todoStore.iosState.value
+        startObservingState()
+    }
+    
+    func startObservingState() {
+        Task {
+            for await it in counterStore.iosState {
+                DispatchQueue.main.async {
+                    self.counterState = it
                 }
             }
         }
-
-        func hello(){
-            print("SwiftUI.hello()")
-            let response = store.dispatch(action: AiCounterAction.PostMessage(message: "hello"))
-            print("res: \(response)")
-        }
-        
-        func incrementCounter() {
-            store.dispatch(action: AiCounterAction.Increment())
+        Task {
+            for await it in todoStore.iosState {
+                DispatchQueue.main.async {
+                    self.todoState = it
+                }
+            }
         }
     }
+}
