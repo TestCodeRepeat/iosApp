@@ -28,6 +28,15 @@ class MainViewModel: ObservableObject {
     }
     
     func startObservingState() {
+        Task{
+            do {
+                for await it in try eventBus.getStoreSideEffectEvents(){
+                    self.handleEventfromEventBus(it.action)
+                }
+            } catch let error as NSError {
+                print("Caught Kotlin exception: \(error)")
+            }
+        }
         Task {
             for await it in counterStore.iosState {
                 DispatchQueue.main.async {
@@ -41,6 +50,26 @@ class MainViewModel: ObservableObject {
                     self.todoState = it
                 }
             }
+        }
+    }
+    
+    func sendEvent(event: Event){
+        func sendAnEvent(event: Event) async {
+            do {
+                try await eventBus.sendEvent(event: event)
+            } catch {
+                print("Error sending event: \(error)")
+            }
+        }
+    }
+    
+    func handleEventfromEventBus(_ action:Effect) {
+        switch action {
+        case let storeSideEffect as AiCounterEffect.ShowToast:
+            print("AiCounter Store Side Effect Triggered: \(storeSideEffect.message)")
+            
+        default:
+            print("Unhandled Event Type: \(action)")
         }
     }
 }
