@@ -52,7 +52,7 @@ struct ContentView: View {
                     action: AiCounterAction.IncrementWithOnComplete(
                         message: "Increment OnComplete",
                         onComplete: {
-                            print("Increment w/ OnComplete")
+                            onComplete()
                         }))
             }, label: {
                 Text("Increment w/ OnComplete")
@@ -60,7 +60,7 @@ struct ContentView: View {
             .padding(.vertical, 20)
 
             Button(action: {
-                viewModel.counterStore.dispatch(action: AiCounterAction.PostMessage(message: "PostMessage - hello clicked"))
+                viewModel.counterStore.dispatch(action: AiCounterAction.PostMessage(message: "PostMessage - Hello World clicked"))
             }, label: {
                 Text("Hello World")
             })
@@ -69,6 +69,10 @@ struct ContentView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
         .edgesIgnoringSafeArea(.all)
+    }
+
+    func onComplete(){
+        print("ContentView.onComplete() called")
     }
 }
 
