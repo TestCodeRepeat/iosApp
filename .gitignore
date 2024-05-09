@@ -36,6 +36,7 @@ gcp_service_account_key.json
 local.properties
 apollo.key
 apollo.key.unused
+sentry.properties
 
 # Idea
 **/.idea/*
@@ -55,3 +56,4 @@ terraform.tfstate.backup
 
 swiftpm
 /.kotlin/
+.sentryclirc
