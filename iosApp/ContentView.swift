@@ -53,6 +53,7 @@ struct ContentView: View {
                         message: "Increment OnComplete",
                         onComplete: {
                             onComplete()
+                            SentryImplIos.instance.captureMessage(message:"SentryImplIos.instance () Increment OnComplete called")
                         }))
             }, label: {
                 Text("Increment w/ OnComplete")
